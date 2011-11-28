@@ -1,0 +1,8 @@
+<%= form_for @item do |f| %>
+<p>Name <%= f.text_field :name  %></p>
+<p>Description <%= f.text_field :description  %></p>
+<p>Select a category: <%= f.collection_select :category_id, Category.all, :id, :title %></p>
+<p>What condition is it in? <%= f.collection_select :condition_id, Condition.all, :id, :state %></p>
+<p>When was it acquired? <%= f.date_select :acquired_on, :start_year => 2001 %></p>
+<%= f.submit "Save" %>
+<% end %>

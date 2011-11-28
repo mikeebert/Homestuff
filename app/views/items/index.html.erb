@@ -1,0 +1,30 @@
+<p><strong><%= link_to "#{@user.first_name}'s Stuff", items_url %></strong></p>
+
+<%= form_tag items_url, :method => :get, :id => "search_form" do %>
+  <p>Search for Item<%= text_field_tag :item, params[:item]  %>
+  <%= select_tag 'condition', options_from_collection_for_select(Condition.all, :id, :state, params[:condition]), :prompt => "-Condition-"  %>
+  <%= select_tag 'category', options_from_collection_for_select(Category.all, :id, :title, params[:category]), :prompt => "-Category-"  %>
+<% end %>
+  </p>
+
+<p><%= link_to "Add New Item", new_item_url, :id => "add_item_link" %></p>
+
+<%= render 'form' %>
+
+<table>
+  <tr align="left">
+    <th>Name</th>
+    <th>Description</th>
+    <th>Category</th>
+    <th>Condition</th>
+  <tr>
+
+  <%= render @items %>
+
+</table>
+<br /> 
+<div id="pages">
+  <%= paginate @items %>
+</div>
+
+

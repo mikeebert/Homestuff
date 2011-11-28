@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<p><strong><%= @user.first_name %> <%= @user.last_name %></strong></p>
+<p><%= @user.email %></p>
+
+<%= link_to "Edit My Account", edit_user_url(@user) %>
+
+
+
+<!-- <%= form_tag user_url, :method => :get do %>
+<p>Search for Item<%= text_field_tag :name  %></p>
+<%= submit_tag 'Search' %>
+<% end %>
+
+  <table>
+    <tr align="left">
+      <th>Name</th>
+      <th>Description</th>
+      <th>Category</th>
+      <th>Condition</th>
+    <tr>
+
+    <%= render @items %>
+
+  </table>
+  <br /> 
+  <div id="pages">
+    <%= paginate @items %>
+  </div> -->
+
+

@@ -1,0 +1,13 @@
+<div id="menubar">
+  <% if !logged_in? %>
+    <%= form_tag sessions_url, :controller => "sessions", :action => "create" do %>
+    Email: <%= text_field_tag :email %> Password: <%= password_field_tag :password %>
+    <%= submit_tag 'Sign In' %>
+    <% end %>
+  <% else %>
+    <%= "Welcome, #{current_user.first_name}!" %> |
+    <%= link_to "My Stuff", items_url%> | 
+    <%= link_to 'My Account', user_path(current_user) %> | 
+    <%= link_to "Logout", sessions_url, :method => :delete %>
+  <% end %>
+</div>

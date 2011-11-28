@@ -1,0 +1,10 @@
+<h3><%= @item.name %> Details</h4>
+
+
+<p><strong>Description:</strong> <%= @item.description %></p>
+<p><strong>Category:</strong> <%= @item.category.title %></p>
+<p><strong>Condition:</strong> <%= @item.condition.state %></p>
+
+
+<%= link_to "Edit Item", edit_item_url(@item) %> | <%= link_to "Delete Item", item_url, :method => :delete, :confirm => "Are you sure?" %>
+

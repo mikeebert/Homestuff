@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Homestuff</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  
+<%= render 'layouts/menubar' %>
+
+<div id="header">
+  <h1>HomeStuff!</h1>
+  <h4>A great place to store your stuff.</h4>
+</div>
+
+<%= yield %>
+
+</body>
+</html>
